@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-base: #090b10;
+    --bg-surface: #10141d;
+    --bg-elevated: #161c29;
+    --bg-card: #181f2f;
+    --border-subtle: #242c3f;
+    --border-highlight: #3b4662;
+    --accent-primary: #0ea5e9;
+    --accent-glow: rgba(14, 165, 233, 0.15);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: var(--bg-base);
+    color: #e2e8f0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* Monospace font for code blocks */
+.font-mono-code {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Custom Scrollbar for code and panel sections */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #090b10;
+}
+::-webkit-scrollbar-thumb {
+  background: #242c3f;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b4662;
+}
+
+/* Scrollbar utility: hide scrollbar but keep scrollability */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Subtle pulse for AI processing states */
+@keyframes subtle-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Shimmer loading effect */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.03) 25%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.03) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Glow accent utilities */
+.cyan-glow {
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.25), 0 0 40px rgba(14, 165, 233, 0.1);
+}
+
+.cyan-glow-sm {
+  box-shadow: 0 0 10px rgba(14, 165, 233, 0.2);
+}
+
+/* Gradient text utility */
+.gradient-text-cyan {
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9, #7dd3fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Fade-in animation for content */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.4s ease-out forwards;
+}
+
+/* Tab content transition */
+@keyframes tab-appear {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-tab-appear {
+  animation: tab-appear 0.25s ease-out forwards;
+}
+
+/* Code syntax highlight colors for raw pre elements */
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
