@@ -24,7 +24,7 @@ const PORT = process.env.PORT || 5001;
 
 // Middleware
 app.use(cors({
-  origin: "https://codelens-ai-fr4i.onrender.com", // Allow frontend dev server
+  origin: "https://codelens-ai-1-2021.onrender.com", // Allow frontend dev server.
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
